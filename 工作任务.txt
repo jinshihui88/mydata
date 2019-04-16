@@ -1,5 +1,0 @@
-工作任务：
-1、明哥让写一个方法调用ws服务，获取返回的xml文件内容
-URL地址：
-https://wl.fundsquare.net/services/securitiesList?schemaVersion=2.1&login=FSQDemoWLXml&password=FSQDemoWLXml123&isinList=ALL&infoBlockList=NAV;Document 
-
