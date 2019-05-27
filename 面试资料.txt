@@ -1,0 +1,26 @@
+
+面试的问题：
+1、堆内存和栈内存（重点）
+Java把内存分成两种，一种叫做栈内存，一种叫做堆内存。
+在函数中定义的一些基本数据类型的变量和对象的引用变量都是在栈内存中分配。当在一段代码块中定义一个变量时，Java就在栈中为这个变量分配内存空间，当超过变量的作用域后，Java会自动释放掉该变量分配的内存空间，该内存空间可以立刻被另作他用。
+堆内存用于存放由new创建的对象和数组。在堆中分配的内存，由Java虚拟机自动垃圾回收器来管理。在堆中产生了一个数组或者对象后，还可以在栈中定义一个特殊的变量，这个变量的取值等于数组或者对象在堆内存中的首地址，在栈中的这个特殊的变量就变成了数组或者对象的引用变量，以后就可以在程序中使用栈内存中的引用变量来访问堆中的数组或者对象，引用变量相当于为数组或者对象起的一个别名或者代号。
+引用变量是普通变量，定义时在栈中分配内存，引用变量在程序运行到作用域外释放，而数组和对象在堆内存中分配。
+
+2、Spring运行原理
+2、bean自动装配技术
+（1）自动发现配置
+使用@ComponentScan和@Component这两个注解配合。其中@ComponentScan注解可以通过指定包名来扫描特定包下面带有@Component注解的类，这时候Spring会自动创建这个bean类，并加到bean容器中以备之后进行注入。
+（2）通过JavaConfig来实现
+使用@Configuration和@Bean两个注解进行配合。在配置文件，如CDPlayerConfig类里面，这种方式有个优点就是可以随心所欲，自己写代码创建需要的bean。
+（3）通过xml文件
+最常见最古老的bean装配技术。
+3、SpringMVC常用的注解
+4、Springmvc中怎么实现拦截器
+（1）实现HandlerInterceptor接口
+（2）继承HandlerInterceptorAdapter类
+5、@SpringBootApplication
+@SpringBootApplication是Spring boot的核心注解，它是一个组合注解。
+@SpringBootApplication注解主要组合了@Configuration、@EnableAutoConfiguration、@ComponentScan，若不使用@SpringBootApplication注解，则可以在入口类直接使用@Configuration、@EnableAutoConfiguration、@ComponentScan。
+其中@EnableAutoConfiguration让Spring Boot根据类路径中的jar包依赖为当前项目进行自动配置。
+Spring Boot会自动扫描@SpringBootApplication所在类的同级包以及下级包里的Bean（若为JPA项目还可以扫描标注@Entity的实体类）。建议入口类放置的位置在groupId和artifactId组合的包名下。
+6、maven的常用命令
